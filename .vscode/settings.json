@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "source/**/*.js": true,
+        "test/**/*.js": true
+    },
+    "codemetrics.basics.ComplexityLevelNormalDescription": ": Normal",
+    "codemetrics.basics.ComplexityLevelLowDescription": ": Low",
+    "codemetrics.basics.ComplexityLevelHighDescription": ": High",
+    "codemetrics.basics.ComplexityLevelExtremeDescription": ": Very High"
+}
