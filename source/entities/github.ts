@@ -17,7 +17,7 @@ export class Markdown {
         Headers: {
             H1: "#{1}",
             H2: "#{2}",
-            H3: /#{3}/g,
+            H3: /#{3}\s\w*\s\w*/g,
             H4: "#{4}",
             H5: "#{5}",
             H6: "#{6}",
