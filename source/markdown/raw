@@ -1,0 +1,65 @@
+'### User Scenario\r\n- [**Application Management**] (https://github.co
+m/Royal-Philips/iDiscover/wiki/User-Scenarios#application-management)\r\n\r\n###
+ User Story\r\n`When I` hover over the **icons** in the **top navigation** \r\n`
+I want` to **see** a **tooltip** containing an **explanation** of the **icon** \
+r\n`so that I` understand the function or meaning of the **icon**\r\n\r\n### Fun
+ctional Requirements \r\n- [ ] `Given` in **customer directory** view\r\n- [ ] `
+Given` in **top navigation** component\r\n - [ ] `When` **hover over** **connect
+ion status** **icon** `then` a **tooltip** **"Connection Status"** `should` be v
+isible \r\n - [ ] `When` **moving mouse away** from **connection status** **icon
+** `then` **tooltip** `should` not be visible\r\n - [ ] `When` **hover over** **
+screen mode** **icon** `then` a **tooltip** **"Screen Mode"** `should` be visibl
+e\r\n - [ ] `When` moving the mouse away from the **screen mode** **icon** `then
+` no **tooltip** `should` be visible\r\n - [ ] `When`**hover over** the **user s
+tatus** **icon** `then`a **tooltip** **"User Status"** `should` be visible\r\n -
+ [ ] `When` moving the mouse away from the **user status** **icon** `then`no **t
+ooltip** `should` be visible\r\n\r\n ---\r\n- [ ] `Given` **projects** view\r\n-
+ [ ] `Given` in **top navigation** component\r\n - [ ] `When` **hover over** the
+ **project lead** **icon** `then` a **tooltip** **"Project Lead"** `should` be v
+isible \r\n - [ ] `When` moving the mouse away from the **project lead** **icon*
+* `then` no **tooltip** `should` be visible\r\n - [ ] `When` **hover over** the
+**project share settings** **icon** `then` a **tooltip** **"Project Share Settin
+gs"** `should` be visible \r\n - [ ] `When` moving the mouse away from the **pro
+ject share settings** **icon** `then` no **tooltip** `should` be visible\r\n - [
+ ] `When` **hover over** **connection status** **icon** `then` a **tooltip** **"
+Connection Status"** `should` be visible \r\n - [ ] `When` **moving mouse away**
+ from **connection status** **icon** `then` **tooltip** `should` not be visible\
+r\n - [ ] `When` **hover over** **screen mode** **icon** `then` a **tooltip** **
+"Screen Mode"** `should` be visible\r\n - [ ] `When` moving the mouse away from
+the **screen mode** **icon** `then` no **tooltip** `should` be visible\r\n - [ ]
+ `When`**hover over** the **user status** **icon** `then`a **tooltip** **"User S
+tatus"** `should` be visible\r\n - [ ] `When` moving the mouse away from the **u
+ser status** **icon** `then`no **tooltip** `should` be visible\r\n\r\n---\r\n- [
+ ] `Given` in **organizational structure** map\r\n- [ ] `Given` in **top navigat
+ion** component\r\n - [ ] `When` **hover over** **connection status** **icon** `
+then` a **tooltip** **"Connection Status"** `should` be visible \r\n - [ ] `When
+` **moving mouse away** from **connection status** **icon** `then` **tooltip** `
+should` not be visible\r\n - [ ] `When` **hover over** **screen mode** **icon**
+`then` a **tooltip** **"Screen Mode"** `should` be visible\r\n - [ ] `When` movi
+ng the mouse away from the **screen mode** **icon** `then` no **tooltip** `shoul
+d` be visible\r\n - [ ] `When`**hover over** the **user status** **icon** `then`
+a **tooltip** **"User Status"** `should` be visible\r\n - [ ] `When` moving the
+mouse away from the **user status** **icon** `then`no **tooltip** `should` be vi
+sible\r\n\r\n---\r\n- [ ] `Given` in **clinical pathway** map\r\n- [ ] `Given` i
+n **top navigation** component\r\n - [ ] `When` **hover over** **connection stat
+us** **icon** `then` a **tooltip** **"Connection Status"** `should` be visible \
+r\n - [ ] `When` **moving mouse away** from **connection status** **icon** `then
+` **tooltip** `should` not be visible\r\n - [ ] `When` **hover over** **screen m
+ode** **icon** `then` a **tooltip** **"Screen Mode"** `should` be visible\r\n -
+[ ] `When` moving the mouse away from the **screen mode** **icon** `then` no **t
+ooltip** `should` be visible\r\n - [ ] `When`**hover over** the **user status**
+**icon** `then`a **tooltip** **"User Status"** `should` be visible\r\n - [ ] `Wh
+en` moving the mouse away from the **user status** **icon** `then`no **tooltip**
+ `should` be visible\r\n\r\n ---\r\n- [ ] `Given` in **caregiver workflow** map\
+r\n- [ ] `Given` in **top navigation** component\r\n - [ ] `When` **hover over**
+ **connection status** **icon** `then` a **tooltip** **"Connection Status"** `sh
+ould` be visible \r\n - [ ] `When` **moving mouse away** from **connection statu
+s** **icon** `then` **tooltip** `should` not be visible\r\n - [ ] `When` **hover
+ over** **screen mode** **icon** `then` a **tooltip** **"Screen Mode"** `should`
+ be visible\r\n - [ ] `When` moving the mouse away from the **screen mode** **ic
+on** `then` no **tooltip** `should` be visible\r\n - [ ] `When`**hover over** th
+e **user status** **icon** `then`a **tooltip** **"User Status"** `should` be vis
+ible\r\n - [ ] `When` moving the mouse away from the **user status** **icon** `t
+hen`no **tooltip** `should` be visible\r\n\r\n### Notes:\r\nProject View: Top Na
+vigation: Right Side \r\n![image](https://cloud.githubusercontent.com/assets/367
+2126/17639590/7e63088c-60eb-11e6-8b53-af24d2110011.png)\r\n'
