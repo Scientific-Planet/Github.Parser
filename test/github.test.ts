@@ -2,13 +2,13 @@
 import { expect } from "chai";
 import * as fs from "fs";
 
-import {Issue} from "../source/entities/github";
+import {Github} from "../source/entities/github";
 
 describe("Github", () => {
     describe("Issue", () => {
         it("Load() should return sample mardown", () => {
             let sample = fs.readFileSync("./source/markdown/sample.md", "utf8");
-            let result = Issue.load();
+            let result = Github.loadIssue();
             expect(result).eql(sample);
     });
     });

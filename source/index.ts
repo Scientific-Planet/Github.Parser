@@ -1,17 +1,11 @@
-import {Issue, Markdown} from "./entities/github";
+import {Github} from "./entities/github";
+import {Parser, Markdown} from "./entities/parser";
 
-let issue = Issue.load();
+let issue = Github.loadIssue();
+let parser = new Parser(issue);
+console.log(parser.parse());
+
 let results = [];
-
-//console.log(Markdown.syntax.Headers.H3.exec(issue));
-
 while ((results = Markdown.syntax.Headers.H3.exec(issue)) !== null) {
   console.log(results[0]);
 }
-
-let expression = /\n/g;
-let test = issue.split(expression);
-console.log(test);
-
-
-
