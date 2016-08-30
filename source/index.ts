@@ -5,7 +5,10 @@ let issue = Github.loadIssue();
 let parser = new Parser(issue);
 console.log(parser.parse());
 
+/*
 let results = [];
-while ((results = Markdown.syntax.Headers.H3.exec(issue)) !== null) {
+expression = /#{3}\s\w*\s\w* /g
+while ((results = expression.exec(issue)) !== null) {
   console.log(results[0]);
 }
+*/

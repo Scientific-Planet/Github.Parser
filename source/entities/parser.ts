@@ -8,12 +8,12 @@ export class Markdown {
             Strikethrough: "~~X~~",
         },
         Headers: {
-            H1: "#{1}",
-            H2: "#{2}",
-            H3: /#{3}\s\w*\s\w*/g,
-            H4: "#{4}",
-            H5: "#{5}",
-            H6: "#{6}",
+            H1: /#{1}\s/,
+            H2: /#{2}\s/,
+            H3: /#{3}\s/,
+            H4: /#{4}\s/,
+            H5: /#{5}\s/,
+            H6: /#{6}\s/,
         },
         Horizontal: {
             Line: "*** or --- or ___",
@@ -39,6 +39,7 @@ export class Markdown {
 }
 export class Parser {
     public static config = /\r\n/g;
+    public output;
     constructor(public issue) { }
     public parse() {
         return this.issue.split(Parser.config);
