@@ -1,5 +1,5 @@
 import {Github} from "./entities/github";
-import {Parser, Markdown} from "./entities/parser";
+import {Parser} from "./entities/parser";
 
 let issue = Github.loadIssue();
 let parser = new Parser(issue);
