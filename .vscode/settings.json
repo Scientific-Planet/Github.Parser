@@ -7,5 +7,6 @@
     "codemetrics.basics.ComplexityLevelNormalDescription": ": Normal",
     "codemetrics.basics.ComplexityLevelLowDescription": ": Low",
     "codemetrics.basics.ComplexityLevelHighDescription": ": High",
-    "codemetrics.basics.ComplexityLevelExtremeDescription": ": Very High"
+    "codemetrics.basics.ComplexityLevelExtremeDescription": ": Very High",
+    "typescript.check.workspaceVersion": false
 }
