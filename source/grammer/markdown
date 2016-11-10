@@ -1,132 +1,45 @@
-start = 
-    statements*
+start      = statements
 
-// Markdown Statement
-statements =
-    statement:statement
-    end
-    {
-        return statement
-    }
-statement = 
-    type: type
-    text: text
-    {
-        return {
-            type: type,
-            text: text
-        }
-    }
-type = 
-    (heading / list)
+/*====Statements====*/
+statements = statement*
+statement  = Type: Type Value: words end*
+           { return { type: Type, value: Value } }
 
-// Markdown syntax
-// Markdown Headings
-heading = 
-    heading: (h6 / h5 / h4 / h3 / h2 /h1) 
-    space: space 
-    {
-        return heading
-    }
-h1 =
-    '#'
-    {
-        return 'H1 Heading'
-    }
-h2 =
-    '##'
-    {
-        return 'H2 Heading'
-    }
-h3 = 
-    '###'
-    {
-        return 'H3 Heading'
-    }
-h4 = 
-    '####'
-    {
-        return 'H4 Heading'
-    }
-h5 =
-    '#####'
-    {
-        return 'H5 Heading'
-    }
-h6 = 
-    '######'
-    {
-        return 'H6 Heading'
-    }
+Type       = Heading / Other
 
-// Markdown Lists
-list =
-    list: (unOrdered)
-    space: space 
-    {
-        return list
-    }
+/*====Headings====*/
+Heading    = H6 / H5 / H4 / H3 / H2 / H1 
+H1         = '# '          { return 'H1 Heading'  }
+H2         = '## '         { return 'H2 Heading' }
+H3         = '### '        { return 'H3 Heading' }
+H4         = '#### '       { return 'H4 Heading' }
+H5         = '##### '      { return 'H5 Heading' }
+H6         = '###### '     { return 'H6 Heading' }
 
-unOrdered = 
-    '-'
-    {
-        return 'UnOrdered List'
-    }
+Other      = Lists / Text / Line
+/*====Lists====*/
+Lists       = Task / UnOrdered
+UnOrdered  = '- '          { return 'UnOrdered List' }
 
-// General
-text = 
-    text:(words)+
-    {
-        return text.join('')
-    }
-words =
-    word: word
-    space: space?
-    {
-        return space===null ? word : word + space 
-    }
-word = 
-    letters:letters+ 
-    {
-        return letters.join('')
-    }
-letters =
-    [a-zA-Z0-9]
-space = 
-    ' '
-end =
-    [\r][\n]
+/*====TASKS====*/
+Task       = OTask / XTask
+OTask      = '- [ ] '      { return 'Incomplete Task' }
+XTask      = '- [x] '      { return 'Complete Task' }
 
-/*
-export class Markdown {
-    public static syntax = {
-        Code: "`X`",
-        Emphasis: {
-            Bold: "**X** or __X__",
-            BoldAndItallics: "**_X_**",
-            Italics: "*X* or _X_",
-            Strikethrough: "~~X~~",
-        },
-        Horizontal: {
-            Line: "*** or --- or ___",
-        },
-        Images: "![alt text](url.png)",
-        Links: {
-            Inline: "[title](url)",
-            Mention: "@",
-        },
-        Lists: {
-            Indent: "...",
-            Ordered: "1.",
-            OrderedSub: "..1.",
-            Task: "- [ ]",
-            UnOrdered: "* or - or +",
-            UnOrderedSub: "⋅⋅*",
-        },
-        Quotes: {
-            Block: ">",
-        },
-    };
+/*====Text====*/
+Text       = empty         { return 'Text' }
 
-}
-*/
+Line       = LineOne / LineTwo / LineThree
+LineOne    = '___ '        { return 'Line' }
+LineTwo    = '--- '        { return 'Line' }
+LineThree  = '*** '        { return 'Line' }
+
+/*====General====*/
+words      = words: $word+
+word       = word: $(!Line letters+ point?)
+letters    = [`~_*a-zA-Z0-9 ]
+digits     = [0-9]
+point      = '.'
+space      = ' '
+empty      = ''
+end        = [\r][\n]
