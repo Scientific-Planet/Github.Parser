@@ -4,6 +4,7 @@
     "jquery": "registry:dt/jquery#1.10.0+20160704162008",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "node": "registry:env/node#6.0.0+20160825160117",
+    "pegjs": "registry:dt/pegjs#0.0.0+20160317120654",
     "sinon": "registry:dt/sinon#1.16.0+20160517064723",
     "sinon-chai": "registry:dt/sinon-chai#2.7.0+20160317120654"
   }

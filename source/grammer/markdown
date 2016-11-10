@@ -1,0 +1,45 @@
+start      = statements
+
+/*====Statements====*/
+statements = statement*
+statement  = Type: Type Value: words end*
+           { return { type: Type, value: Value } }
+
+Type       = Heading / Other
+
+/*====Headings====*/
+Heading    = H6 / H5 / H4 / H3 / H2 / H1 
+H1         = '# '          { return 'H1 Heading'  }
+H2         = '## '         { return 'H2 Heading' }
+H3         = '### '        { return 'H3 Heading' }
+H4         = '#### '       { return 'H4 Heading' }
+H5         = '##### '      { return 'H5 Heading' }
+H6         = '###### '     { return 'H6 Heading' }
+
+Other      = Lists / Text / Line
+/*====Lists====*/
+Lists       = Task / UnOrdered
+UnOrdered  = '- '          { return 'UnOrdered List' }
+
+/*====TASKS====*/
+Task       = OTask / XTask
+OTask      = '- [ ] '      { return 'Incomplete Task' }
+XTask      = '- [x] '      { return 'Complete Task' }
+
+/*====Text====*/
+Text       = empty         { return 'Text' }
+
+Line       = LineOne / LineTwo / LineThree
+LineOne    = '___ '        { return 'Line' }
+LineTwo    = '--- '        { return 'Line' }
+LineThree  = '*** '        { return 'Line' }
+
+/*====General====*/
+words      = words: $word+
+word       = word: $(!Line letters+ point?)
+letters    = [`~_*a-zA-Z0-9 ]
+digits     = [0-9]
+point      = '.'
+space      = ' '
+empty      = ''
+end        = [\r][\n]
