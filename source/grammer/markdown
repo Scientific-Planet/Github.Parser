@@ -18,7 +18,7 @@ H6         = '###### '     { return 'H6 Heading' }
 
 Other      = Lists / Text / Line
 /*====Lists====*/
-Lists       = Task / UnOrdered
+Lists      = Task / UnOrdered
 UnOrdered  = '- '          { return 'UnOrdered List' }
 
 /*====TASKS====*/
