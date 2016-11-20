@@ -20,39 +20,29 @@ H6         = '###### ' Value: words end*
            { return { type: 'H6 Heading', value: Value} }
 
 /*====LIST====*/
-List       = OTask / XTask / UList / Normal
-UList      = '- ' Value: Text
+List       = Task / UList
+UList      = '- ' Value: words end*
            { return { type: 'Unordered List', value: Value } }
-OTask      = '- [ ] ' Value: Text
-           { return { type: 'Incomplete Task', value: Value } }
-XTask      = '- [x] ' Value: Text
-           { return { type: 'Complete Task', value: Value } }
-Normal     = Value: Text
-           { return { type: 'Text', value: Value } }
 
-/*====Text====*/
-Text       = Value: ( Other / Plain )
-Other      = Start:words* Value:(Code / Bold / Italic / Link) End: words* end*
-           { return Start + Value + End }
-Bold       = '**' Value: words '**'
-           { return Value }
-Code       = '`' Value: words '`'
-           { return Value }
-Italic     = '*' Value: words '*'
-           { return Value }
-Link       = '[' Value: words ']' '(' words ')'
-           { return Value }
-Plain      = Value: words end
-           { return Value }
+/*====TASKS====*/
+Task       = OTask / XTask
+OTask      = '- [ ] ' Value: words end*
+           { return { type: 'Incomplete Task', value: Value } }
+XTask      = '- [x] ' Value: words end*
+           { return { type: 'Complete Task', value: Value } }
 
 /*====LINE====*/
 Line       = LineOne / LineTwo / LineThree
 LineOne    = '___' end*
-           { return { type: 'Line', value: '' } }
+           { return { type: 'Line', value: '___' } }
 LineTwo    = '---' end*
-           { return { type: 'Line', value: '' } } 
+           { return { type: 'Line', value: '___' } } 
 LineThree  = '***' end*
-           { return { type: 'Line', value: '' } }
+           { return { type: 'Line', value: '___' } }
+
+/*====Text====*/
+Text       = Value: words end*
+           { return { type: 'Text', value: Value} }
 
 /*====General====*/
 words      = $word+
