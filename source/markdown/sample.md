@@ -1,5 +1,5 @@
 ### User Scenario
-- [**Application Management**] (https://github.com/Royal-Philips/iDiscover/wiki/User-Scenarios#application-management)
+- [**Application Management**](https://github.com/Royal-Philips/iDiscover/wiki/User-Scenarios#application-management)
 
 ### User Story
 `When I` hover over the **icons** in the **top navigation** 

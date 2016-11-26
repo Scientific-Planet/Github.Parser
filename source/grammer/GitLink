@@ -1,0 +1,55 @@
+start      = statements
+
+/*====Statements====*/
+statements = statement*
+statement  = Heading / List / Line / Text
+
+/*====Headings====*/
+Heading    = H6 / H5 / H4 / H3 / H2 / H1 
+H1         = '# ' Value: words end*         
+           { return { type: 'H1 Heading', value: Value } }
+H2         = '## ' Value: words end*          
+           { return { type: 'H2 Heading', value: Value} }
+H3         = '### ' Value: words end*          
+           { return { type: 'H3 Heading', value: Value} }
+H4         = '#### ' Value: words end*  
+           { return { type: 'H4 Heading', value: Value} }
+H5         = '##### ' Value: words end*  
+           { return { type: 'H5 Heading', value: Value} }
+H6         = '###### ' Value: words end*  
+           { return { type: 'H6 Heading', value: Value} }
+
+/*====LIST====*/
+List       = Task / UList
+UList      = '- ' Value: words end*
+           { return { type: 'Unordered List', value: Value } }
+
+/*====TASKS====*/
+Task       = OTask / XTask
+OTask      = '- [ ] ' Value: words end*
+           { return { type: 'Incomplete Task', value: Value } }
+XTask      = '- [x] ' Value: words end*
+           { return { type: 'Complete Task', value: Value } }
+
+/*====LINE====*/
+Line       = LineOne / LineTwo / LineThree
+LineOne    = '___' end*
+           { return { type: 'Line', value: '___' } }
+LineTwo    = '---' end*
+           { return { type: 'Line', value: '___' } } 
+LineThree  = '***' end*
+           { return { type: 'Line', value: '___' } }
+
+/*====Text====*/
+Text       = Value: words end*
+           { return { type: 'Text', value: Value} }
+
+/*====General====*/
+words      = $word+
+word       = $(letters+ point?)
+letters    = [a-zA-Z0-9 ]
+digits     = [0-9]
+point      = '.'
+space      = ' '
+empty      = ''
+end        = [\r][\n]
