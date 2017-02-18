@@ -2,7 +2,6 @@ start      = statements
 
 /*====Statements====*/
 statements = statement*
-<<<<<<< HEAD
 statement  = Type: Type Value: words end*
            { return { type: Type, value: Value } }
 
@@ -96,7 +95,6 @@ LineThree  = '***' end*
 words      = $word+
 word       = $(letters+ point?)
 letters    = [a-zA-Z0-9 ]
->>>>>>> db2903b00da6620a13bd5c0f8636329f28619292
 digits     = [0-9]
 point      = '.'
 space      = ' '
